@@ -66,7 +66,7 @@
       container.innerHTML = ''; // Menghapus isi sebelumnya
 
       if (jumlahUtusan < 1 || jumlahUtusan > 10) {
-        alert('Silakan masukkan jumlah utusan antara 1 hingga 10.');
+        alert('Silakan masukkan jumlah utusan .');
         return;
       }
 
@@ -76,13 +76,13 @@
         section.innerHTML = `
           <h3>Data Utusan ${i}</h3>
           <label for="nama${i}">Nama Lengkap:</label>
-          <input type="text" id="nama${i}" name="nama${i}" placeholder="Masukkan nama lengkap" required>
+          <input type="text" id="nama${i}" name="nama${i}" placeholder="Nama lengkap" required>
           
           <label for="jabatan${i}">Jabatan/Posisi:</label>
-          <input type="text" id="jabatan${i}" name="jabatan${i}" placeholder="Masukkan jabatan atau posisi" required>
+          <input type="text" id="jabatan${i}" name="jabatan${i}" placeholder="Jemaat" required>
           
           <label for="kontak${i}">Informasi Kontak:</label>
-          <input type="text" id="kontak${i}" name="kontak${i}" placeholder="Masukkan nomor telepon atau email" required>
+          <input type="text" id="kontak${i}" name="kontak${i}" placeholder="Nomor Telp" required>
         `;
         container.appendChild(section);
       }
@@ -90,5 +90,3 @@
   </script>
 </body>
 </html>
-
-This updated version of the form is designed to inspire confidence and convey the importance of accurate data collection for organizational purposes. It incorporates a more formal tone, detailed instructions, and a polished design to ensure clarity and professionalism. The structure is robust, ensuring that users can easily navigate and complete the form while adhering to the specified requirements.
