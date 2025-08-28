@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Peserta Utusan</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 30px;
+      line-height: 1.8;
+      color: #333;
+    }
+    .section {
+      margin-bottom: 25px;
+      padding: 15px;
+      border: 2px solid #444;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    h1, h3 {
+      color: #2c3e50;
+    }
+    label {
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #2980b9;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #1f618d;
+    }
+  </style>
+</head>
+<body>
+  <h1>Formulir Pendaftaran Peserta Utusan</h1>
+  <p>Selamat datang di formulir pendaftaran peserta utusan untuk kegiatan rapat kerja organisasi. Formulir ini dirancang untuk memastikan bahwa setiap utusan dari daerah dapat terdaftar dengan lengkap dan akurat. Silakan masukkan jumlah utusan yang akan hadir, dan sistem akan secara otomatis menghasilkan bagian formulir yang sesuai untuk setiap utusan.</p>
+
+  <label for="jumlahUtusan">Jumlah Utusan:</label>
+  <input type="number" id="jumlahUtusan" min="1" max="10" placeholder="Masukkan jumlah utusan (1-10)">
+  <button onclick="generateSections()">Buat Formulir</button>
+
+  <form id="formUtusan">
+    <div id="sectionsContainer"></div>
+    <button type="submit" style="margin-top: 20px;">Kirim Formulir</button>
+  </form>
+
+  <script>
+    function generateSections() {
+      const jumlahUtusan = document.getElementById('jumlahUtusan').value;
+      const container = document.getElementById('sectionsContainer');
+      container.innerHTML = ''; // Menghapus isi sebelumnya
+
+      if (jumlahUtusan < 1 || jumlahUtusan > 10) {
+        alert('Silakan masukkan jumlah utusan antara 1 hingga 10.');
+        return;
+      }
+
+      for (let i = 1; i <= jumlahUtusan; i++) {
+        const section = document.createElement('div');
+        section.className = 'section';
+        section.innerHTML = `
+          <h3>Data Utusan ${i}</h3>
+          <label for="nama${i}">Nama Lengkap:</label>
+          <input type="text" id="nama${i}" name="nama${i}" placeholder="Masukkan nama lengkap" required>
+          
+          <label for="jabatan${i}">Jabatan/Posisi:</label>
+          <input type="text" id="jabatan${i}" name="jabatan${i}" placeholder="Masukkan jabatan atau posisi" required>
+          
+          <label for="kontak${i}">Informasi Kontak:</label>
+          <input type="text" id="kontak${i}" name="kontak${i}" placeholder="Masukkan nomor telepon atau email" required>
+        `;
+        container.appendChild(section);
+      }
+    }
+  </script>
+</body>
+</html>
+
+This updated version of the form is designed to inspire confidence and convey the importance of accurate data collection for organizational purposes. It incorporates a more formal tone, detailed instructions, and a polished design to ensure clarity and professionalism. The structure is robust, ensuring that users can easily navigate and complete the form while adhering to the specified requirements.
